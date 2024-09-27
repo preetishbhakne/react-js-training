@@ -1,29 +1,27 @@
-import AddCity from "./AddCityAss2";
-import Assd1 from "./api";
-import ImageGallery from "./api";
+import React from 'react';
 
-import CitiesList from "./CitiesList";
-import DeptDetails from "./DeptDetails";
-import DeptList from "./DeptList";
-import Login from "./LoginEg";
+import Assd1 from './api';
+import AjaxDemo1 from './AjaxDemo1';
 
-import UserInfo from "./UserInfo";
-
- function App() {
+import UserCards from './AjaxGetUsers';
+import AjaxDemo2 from './AjaxDemo2';
+import AjaxDemo3 from './components/Component_AjaxDemo3';
+import EmpComponent from './components/Component_Emp';
+ 
+function App() {
   return (
     <div>
-      <h3>Developing Web Apps using React JS</h3>
+      <h3>Server communication in React App using Axios Library</h3>
       <hr/>
-     
-    <AddCity />
-
-      {/* <UserInfo />
+      {/* //<UserCards/> */}
+      {/* <Assd1 /> */}
       <hr/>
-      <CitiesList />
+      {/* <CitiesList />
       <hr/>
       <DeptDetails />
       <hr/>
       <DeptList /> */}
+      <EmpComponent />
 
  
     </div>

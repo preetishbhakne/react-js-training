@@ -1,40 +1,54 @@
-import React, { useState } from 'react';
-city=["Hyderabad", "Gurgaon","Mumbai","Chennai"];
-cities=[];
 
-const AddCity = () => {
+
+import React, { useState } from 'react';
+
+const CityAddition = () => {
   const [city, setCity] = useState('');
   const [cities, setCities] = useState([]);
+  const [message, setMessage] = useState('');
 
-  const handleAddCity = (e) => {
-    e.preventDefault(); 
-    if (city.trim()) {
-      setCities([...cities, city.trim()]); 
-      setCity(''); 
+  const handleInputChange = (e) => {
+    setCity(e.target.value);
+    setMessage(''); 
+  };
+
+  const handleAddCity = () => {
+    if (city && !cities.includes(city)) {
+      setCities([...cities, city]);
+      setCity('');
+      setMessage(''); 
+    }
+  };
+
+  const handleRemoveCity = () => {
+    if (city && cities.includes(city)) {
+      setCities(cities.filter(c => c !== city));
+      setCity('');
+      setMessage(''); 
+    } else if (city) {
+      setMessage('invalid city');
     }
   };
 
   return (
-    <div>
-      <h1>Add City</h1>
-      <form onSubmit={handleAddCity}>
-        <input
-          type="text"
-          value={city}
-          onChange={(e) => setCity(e.target.value)} 
-          placeholder="Enter city name"
-        />
-        <button type="submit">Add City</button>
-      </form>
+    <div className="container">
+      <input
+        type="text"
+        value={city}
+        onChange={handleInputChange}
+      />
+      <button onClick={handleAddCity}>Add City</button>
+      <button onClick={handleRemoveCity}>Remove City</button>
 
-      <h2>City List:</h2>
+      {message && <p>{message}</p>} 
+
       <ul>
-        {cities.map((c, index) => (
-          <li key={index}>{c}</li> 
+        {cities.map((city, index) => (
+          <li key={index}>{city}</li>
         ))}
       </ul>
     </div>
   );
 };
 
-export default AddCity;
+export default CityAddition;

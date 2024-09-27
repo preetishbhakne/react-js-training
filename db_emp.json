@@ -1,0 +1,18 @@
+{"emp":[
+    {
+      "empno": 10,
+      "ename": "Accounts",
+      "job": "Hyderabad",
+      "salary":"909090",
+      "deptno":"30"
+    },
+    {
+      "empno": 10,
+      "ename": "Accounts",
+      "job": "Hyderabad",
+      "salary":"9090987690",
+      "deptno":"2"
+    }
+    
+  ]
+}
